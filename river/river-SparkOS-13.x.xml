@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="lineageOS"
+		fetch="https://github.com/LineageOS"
+		revision="lineage-20.0" />
+
+	<!-- Device repos -->
+	<project name="FPSensor/device_motorola_river" path="device/motorola/river" remote="github" revision="pyro" />
+	<project name="FPSensor/device_motorola_sdm632-common" path="device/motorola/sdm632-common" remote="github" revision="pyro" />
+        <project name="FPSensor/kernel_motorola_sdm632" path="kernel/motorola/sdm632" remote="github" revision="pyro" />
+        <project name="FPSensor/vendor_motorola_river" path="vendor/motorola/river" remote="github" revision="pyro" />
+        <project name="FPSensor/vendor_motorola_sdm632-common" path="vendor/motorola/sdm632-common" remote="github" revision="pyro" />
+
+	<!-- Motorola Specific -->
+	<project name="android_hardware_motorola" path="hardware/motorola" remote="lineageOS" revision="lineage-20" />
+	<project name="android_hardware_lineage_compat" path="hardware/lineage/compat" remote="lineageOS" />
+	
+	<!-- QCOM Hals -->
+	<project name="android_hardware_qcom_audio" path="hardware/qcom-caf/msm8996/audio" remote="lineageOS" revision="lineage-20.0-caf-msm8996" />
+	<project name="android_hardware_qcom_media" path="hardware/qcom-caf/msm8996/media" remote="lineageOS" revision="lineage-20.0-caf-msm8996" />
+
+	<!-- patches -->
+	<remove-project name="build_make" />
+	<project name="FPSensor/spark_build_make" path="build/make" remote="github" revision="pyro" >
+	    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+            <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+            <linkfile src="core" dest="build/core" />
+            <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+            <linkfile src="target" dest="build/target" />
+            <linkfile src="tools" dest="build/tools" />
+        </project>
+
+</manifest>
