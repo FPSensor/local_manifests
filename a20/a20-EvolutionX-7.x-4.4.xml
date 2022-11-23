@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<!-- Device repos -->
+        <project name="FPSensor/device_samsung_a20" path="device/samsung/a20" remote="github" revision="13" />
+        <project name="FPSensor/device_samsung_universal7885-common" path="device/samsung/universal7885-common" remote="github" revision="13" />
+        <project name="FPSensor/kernel_samsung_exynos7885" path="kernel/samsung/exynos7885" remote="github" revision="13" />
+        <project name="FPSensor/vendor_samsung" path="vendor/samsung" remote="github" revision="13" />
+
+        <!-- Samsung common -->
+        <project path="hardware/samsung" name="eurekadevelopment/android_hardware_samsung" remote="github" revision="AOSP-13"/>
+        <project path="hardware/samsung_slsi/libbt" name="eurekadevelopment/android_hardware_samsung_slsi_libbt" remote="github" revision="android-13" />
+        <project path="hardware/samsung_slsi/scsc_wifibt/wifi_hal" name="eurekadevelopment/android_hardware_samsung_slsi_scsc_wifibt_wifi_hal" remote="github" revision="lineage-19.0" />
+        <project path="hardware/samsung_slsi/scsc_wifibt/wpa_supplicant_lib" name="LineageOS/android_hardware_samsung_slsi_scsc_wifibt_wpa_supplicant_lib" remote="github" revision="lineage-20" />
+
+</manifest>
