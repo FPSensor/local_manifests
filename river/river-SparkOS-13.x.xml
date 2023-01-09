@@ -6,10 +6,10 @@
 
 	<!-- Device repos -->
 	<project name="FPSensor/device_motorola_river" path="device/motorola/river" remote="github" revision="pyro" />
-	<project name="FPSensor/device_motorola_sdm632-common" path="device/motorola/sdm632-common" remote="github" revision="pyro" />
-        <project name="FPSensor/kernel_motorola_sdm632" path="kernel/motorola/sdm632" remote="github" revision="pyro" />
-        <project name="FPSensor/vendor_motorola_river" path="vendor/motorola/river" remote="github" revision="pyro" />
-        <project name="FPSensor/vendor_motorola_sdm632-common" path="vendor/motorola/sdm632-common" remote="github" revision="pyro" />
+	<project name="FPSensor/device_motorola_sdm632-common" path="device/motorola/sdm632-common" remote="github" revision="13" />
+        <project name="FPSensor/kernel_motorola_sdm632" path="kernel/motorola/sdm632" remote="github" revision="13" />
+        <project name="FPSensor/vendor_motorola_river" path="vendor/motorola/river" remote="github" revision="13" />
+        <project name="FPSensor/vendor_motorola_sdm632-common" path="vendor/motorola/sdm632-common" remote="github" revision="13" />
 
 	<!-- Motorola Specific -->
 	<project name="android_hardware_motorola" path="hardware/motorola" remote="lineageOS" revision="lineage-20" />
