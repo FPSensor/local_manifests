@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  FPSensor local manifest: Moto X4 (payton) on LineageOS 20 with kernel 4.19.
+  FPSensor local manifest: Moto X4 (payton) on LineageOS 22.2 with kernel 4.19.
 
   Usage:
-    repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 (add git-lfs)
-    git clone https://github.com/FPSensor/local_manifests .repo/local_manifests
+    repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 (add git-lfs)
+    git clone -b lineage-22.2 https://github.com/FPSensor/local_manifests .repo/local_manifests
     repo sync
 
   Every project is hosted at github.com/FPSensor; the comment above each
   one names the upstream it was imported from (history preserved).
+
+  HALs: LineageOS 22.2 maps sdm660 with TARGET_ENFORCES_QSSI to
+  UM_4_19_LEGACY_FAMILY (hardware/qcom-caf/common), and its
+  lineage-22.2-caf-sdm660 audio/display/media are the 4.19 HALs, so the
+  stock LineageOS projects are used (no overrides needed, unlike 20.0).
 -->
 <manifest>
   <remote name="fpsensor" fetch="https://github.com/FPSensor" />
-
-  <!--
-    sdm660 4.19 qcom-caf HALs. LineageOS ships its own lineage-20.0-caf-sdm660
-    (LA.UM.11.2.1) on these paths; replace them with the ones whyred/lavender
-    4.19 builds use (pix106 sdm660-4.19-R-13). The repos are shared by
-    several paths, so remove them by path, not by name.
-  -->
-  <remove-project path="hardware/qcom-caf/sdm660/audio" />
-  <remove-project path="hardware/qcom-caf/sdm660/display" />
-  <remove-project path="hardware/qcom-caf/sdm660/media" />
-
-  <!-- imported from pix106/android_hardware_qcom-caf_* @ sdm660-4.19-R-13 -->
-  <project path="hardware/qcom-caf/sdm660/audio" name="android_hardware_qcom-caf_audio" remote="fpsensor" revision="lineage-20.0-caf-sdm660-4.19" groups="qcom,sdm660" />
-  <project path="hardware/qcom-caf/sdm660/display" name="android_hardware_qcom-caf_display" remote="fpsensor" revision="lineage-20.0-caf-sdm660-4.19" groups="qcom" />
-  <project path="hardware/qcom-caf/sdm660/media" name="android_hardware_qcom-caf_media" remote="fpsensor" revision="lineage-20.0-caf-sdm660-4.19" groups="qcom,sdm660" />
 
   <!--
     Latest AOSP clang (r614150, clang 23.0.1) for the kernel
@@ -40,27 +30,27 @@
   </project>
 
   <!-- Device -->
-  <!-- imported from LineageOS/android_device_motorola_payton @ lineage-20 -->
-  <project path="device/motorola/payton" name="android_device_motorola_payton" remote="fpsensor" revision="lineage-20" />
-  <!-- imported from LineageOS/android_device_motorola_msm8998-common @ lineage-20 -->
-  <project path="device/motorola/msm8998-common" name="android_device_motorola_msm8998-common" remote="fpsensor" revision="lineage-20" />
+  <!-- imported from LineageOS/android_device_motorola_payton @ lineage-22.2 -->
+  <project path="device/motorola/payton" name="android_device_motorola_payton" remote="fpsensor" revision="lineage-22.2" />
+  <!-- imported from LineageOS/android_device_motorola_msm8998-common @ lineage-22.2 -->
+  <project path="device/motorola/msm8998-common" name="android_device_motorola_msm8998-common" remote="fpsensor" revision="lineage-22.2" />
 
-  <!-- Kernel -->
+  <!-- Kernel (same tree as 20.0: 4.19.325, meets the Android 15 4.19 base config) -->
   <!-- imported from moto-common/android_kernel_motorola_msm-4.19 @ 13-beckham-sdm660-7 -->
-  <project path="kernel/motorola/sdm660-4.19" name="android_kernel_motorola_sdm660-4.19" remote="fpsensor" revision="lineage-20.0" />
+  <project path="kernel/motorola/sdm660-4.19" name="android_kernel_motorola_sdm660-4.19" remote="fpsensor" revision="lineage-22.2" />
   <!-- Reference only (4.4 sources for porting); not used by the build. -->
   <!-- imported from LineageOS/android_kernel_motorola_msm8998 @ lineage-18.1 -->
   <project path="kernel/motorola/msm8998-4.4" name="android_kernel_motorola_msm8998" remote="fpsensor" revision="lineage-18.1" groups="notdefault,reference" clone-depth="1" />
 
   <!-- Vendor blobs -->
-  <!-- imported from TheMuppets/proprietary_vendor_motorola_payton @ lineage-20 -->
-  <project path="vendor/motorola/payton" name="proprietary_vendor_motorola_payton" remote="fpsensor" revision="lineage-20" />
-  <!-- imported from TheMuppets/proprietary_vendor_motorola_msm8998-common @ lineage-20 -->
-  <project path="vendor/motorola/msm8998-common" name="proprietary_vendor_motorola_msm8998-common" remote="fpsensor" revision="lineage-20" />
+  <!-- imported from TheMuppets/proprietary_vendor_motorola_payton @ lineage-22.2 -->
+  <project path="vendor/motorola/payton" name="proprietary_vendor_motorola_payton" remote="fpsensor" revision="lineage-22.2" />
+  <!-- imported from TheMuppets/proprietary_vendor_motorola_msm8998-common @ lineage-22.2 -->
+  <project path="vendor/motorola/msm8998-common" name="proprietary_vendor_motorola_msm8998-common" remote="fpsensor" revision="lineage-22.2" />
 
   <!-- msm8998-common dependencies (lineage.dependencies) -->
-  <!-- imported from LineageOS/android_hardware_motorola @ lineage-20 -->
-  <project path="hardware/motorola" name="android_hardware_motorola" remote="fpsensor" revision="lineage-20" />
-  <!-- imported from LineageOS/android_external_bson @ lineage-20 -->
-  <project path="external/bson" name="android_external_bson" remote="fpsensor" revision="lineage-20" />
+  <!-- imported from LineageOS/android_hardware_motorola @ lineage-22.2 -->
+  <project path="hardware/motorola" name="android_hardware_motorola" remote="fpsensor" revision="lineage-22.2" />
+  <!-- imported from LineageOS/android_external_bson @ lineage-22.2 -->
+  <project path="external/bson" name="android_external_bson" remote="fpsensor" revision="lineage-22.2" />
 </manifest>
