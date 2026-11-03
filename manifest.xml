@@ -27,6 +27,10 @@
   -->
   <project path="prebuilts/clang/host/linux-x86-llvm-toolchain" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" revision="refs/heads/mirror-goog-main-llvm-toolchain-source" clone-depth="1" groups="pdk">
     <linkfile src="clang-r614150" dest="prebuilts/clang/host/linux-x86/clang-r614150" />
+    <!-- Hide this checkout from Soong/Kati: its Android.bp duplicates the
+         modules of prebuilts/clang/host/linux-x86. The finder prunes any
+         directory containing .find-ignore (checked with lstat). -->
+    <linkfile src="GCC_4_9_DEPRECATION.md" dest="prebuilts/clang/host/linux-x86-llvm-toolchain/.find-ignore" />
   </project>
 
   <!-- Device -->
