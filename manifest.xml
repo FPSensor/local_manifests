@@ -28,6 +28,17 @@
   <project path="hardware/qcom-caf/sdm660/display" name="android_hardware_qcom-caf_display" remote="fpsensor" revision="lineage-20.0-caf-sdm660-4.19" groups="qcom" />
   <project path="hardware/qcom-caf/sdm660/media" name="android_hardware_qcom-caf_media" remote="fpsensor" revision="lineage-20.0-caf-sdm660-4.19" groups="qcom,sdm660" />
 
+  <!--
+    Latest AOSP clang (r614150, clang 23.0.1) for the kernel
+    (TARGET_KERNEL_CLANG_VERSION := r614150). It is only published on the
+    llvm toolchain mirror branch, and its binaries exceed GitHub's 100MB
+    file limit, so it is fetched from AOSP directly and linked into the
+    path vendor/lineage expects.
+  -->
+  <project path="prebuilts/clang/host/linux-x86-llvm-toolchain" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" revision="refs/heads/mirror-goog-main-llvm-toolchain-source" clone-depth="1" groups="pdk">
+    <linkfile src="clang-r614150" dest="prebuilts/clang/host/linux-x86/clang-r614150" />
+  </project>
+
   <!-- Device -->
   <!-- imported from LineageOS/android_device_motorola_payton @ lineage-20 -->
   <project path="device/motorola/payton" name="android_device_motorola_payton" remote="fpsensor" revision="lineage-20" />
