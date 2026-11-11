@@ -43,7 +43,7 @@
        (LineageOS/android_kernel_qcom_sdm660 @ lineage-20) with the payton/Moto
        bring-up on top. Built from vendor/sdm660-perf_defconfig plus
        vendor/ext_config/{moto-sdm660,payton}.config. -->
-  <project path="kernel/motorola/sdm660-4.19" name="android_kernel_motorola_sdm660-4.19" remote="fpsensor" revision="lineage-22.2" />
+  <project path="kernel/motorola/sdm660" name="android_kernel_motorola_sdm660" remote="fpsensor" revision="lineage-22.2" />
 
   <!-- Vendor blobs -->
   <!-- imported from TheMuppets/proprietary_vendor_motorola_payton @ lineage-22.2 -->
