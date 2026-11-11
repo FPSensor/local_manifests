@@ -39,8 +39,10 @@
   <!-- imported from LineageOS/android_device_motorola_msm8998-common @ lineage-22.2 -->
   <project path="device/motorola/msm8998-common" name="android_device_motorola_msm8998-common" remote="fpsensor" revision="lineage-22.2" />
 
-  <!-- Kernel (same tree as 20.0: 4.19.325, meets the Android 15 4.19 base config) -->
-  <!-- imported from moto-common/android_kernel_motorola_msm-4.19 @ 13-beckham-sdm660-7 -->
+  <!-- Kernel: 4.19.325-cip, based on the official LineageOS sdm660 kernel
+       (LineageOS/android_kernel_qcom_sdm660 @ lineage-20) with the payton/Moto
+       bring-up on top. Built from vendor/sdm660-perf_defconfig plus
+       vendor/ext_config/{moto-sdm660,payton}.config. -->
   <project path="kernel/motorola/sdm660-4.19" name="android_kernel_motorola_sdm660-4.19" remote="fpsensor" revision="lineage-22.2" />
   <!-- Reference only (4.4 sources for porting); not used by the build. -->
   <!-- imported from LineageOS/android_kernel_motorola_msm8998 @ lineage-18.1 -->
