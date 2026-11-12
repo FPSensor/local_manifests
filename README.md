@@ -8,3 +8,5 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
 git clone -b lineage-24.0 https://github.com/FPSensor/local_manifests .repo/local_manifests
 repo sync
 ```
+
+The TWRP manifest lives in the twrp-12.1 branch.
