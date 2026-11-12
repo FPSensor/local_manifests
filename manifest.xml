@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  FPSensor local manifest: Moto X4 (payton) on LineageOS 22.2 with kernel 4.19.
+  FPSensor local manifest: Moto X4 (payton) on LineageOS 24.0 with kernel 4.19.
 
   Usage:
-    repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 (add git-lfs)
-    git clone -b lineage-22.2 https://github.com/FPSensor/local_manifests .repo/local_manifests
+    repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 (add git-lfs)
+    git clone -b lineage-24.0 https://github.com/FPSensor/local_manifests .repo/local_manifests
     repo sync
 
   Modified projects are hosted at github.com/FPSensor (the comment above
   each one names its upstream); unmodified dependencies come from LineageOS.
-
-  HALs: LineageOS 22.2 maps sdm660 with TARGET_ENFORCES_QSSI to
-  UM_4_19_LEGACY_FAMILY (hardware/qcom-caf/common), and its
-  lineage-22.2-caf-sdm660 audio/display/media are the 4.19 HALs, so the
-  stock LineageOS projects are used (no overrides needed, unlike 20.0).
 -->
 <manifest>
   <remote name="fpsensor" fetch="https://github.com/FPSensor" />
@@ -34,26 +29,29 @@
   </project>
 
   <!-- Device -->
-  <!-- imported from LineageOS/android_device_motorola_payton @ lineage-22.2 -->
-  <project path="device/motorola/payton" name="android_device_motorola_payton" remote="fpsensor" revision="lineage-22.2" />
-  <!-- imported from LineageOS/android_device_motorola_msm8998-common @ lineage-22.2 -->
-  <project path="device/motorola/msm8998-common" name="android_device_motorola_msm8998-common" remote="fpsensor" revision="lineage-22.2" />
+  <!-- imported from LineageOS/android_device_motorola_payton -->
+  <project path="device/motorola/payton" name="android_device_motorola_payton" remote="fpsensor" revision="lineage-24.0" />
+  <!-- imported from LineageOS/android_device_motorola_msm8998-common,
+       renamed to sdm660-common -->
+  <project path="device/motorola/sdm660-common" name="android_device_motorola_sdm660-common" remote="fpsensor" revision="lineage-24.0" />
 
   <!-- Kernel: 4.19.325-cip, based on the official LineageOS sdm660 kernel
        (LineageOS/android_kernel_qcom_sdm660 @ lineage-20) with the payton/Moto
        bring-up on top. Built from vendor/sdm660-perf_defconfig plus
        vendor/ext_config/{moto-sdm660,payton}.config. -->
-  <project path="kernel/motorola/sdm660" name="android_kernel_motorola_sdm660" remote="fpsensor" revision="lineage-22.2" />
+  <project path="kernel/motorola/sdm660" name="android_kernel_motorola_sdm660" remote="fpsensor" revision="lineage-24.0" />
 
   <!-- Vendor blobs -->
-  <!-- imported from TheMuppets/proprietary_vendor_motorola_payton @ lineage-22.2 -->
-  <project path="vendor/motorola/payton" name="proprietary_vendor_motorola_payton" remote="fpsensor" revision="lineage-22.2" />
-  <!-- imported from TheMuppets/proprietary_vendor_motorola_msm8998-common @ lineage-22.2 -->
-  <project path="vendor/motorola/msm8998-common" name="proprietary_vendor_motorola_msm8998-common" remote="fpsensor" revision="lineage-22.2" />
+  <!-- imported from TheMuppets/proprietary_vendor_motorola_payton -->
+  <project path="vendor/motorola/payton" name="proprietary_vendor_motorola_payton" remote="fpsensor" revision="lineage-24.0" />
+  <!-- imported from TheMuppets/proprietary_vendor_motorola_msm8998-common,
+       renamed to sdm660-common -->
+  <project path="vendor/motorola/sdm660-common" name="proprietary_vendor_motorola_sdm660-common" remote="fpsensor" revision="lineage-24.0" />
 
-  <!-- msm8998-common dependencies (lineage.dependencies). Unmodified, so
+  <!-- sdm660-common dependencies (lineage.dependencies). Unmodified, so
        they come straight from LineageOS; listing them here keeps roomservice
-       from adding them. bson is needed by the payton camera blobs. -->
-  <project path="hardware/motorola" name="LineageOS/android_hardware_motorola" remote="github" revision="lineage-22.2" />
+       from adding them. bson is needed by the payton camera blobs and has no
+       lineage-24.0 branch, so its latest branch is used. -->
+  <project path="hardware/motorola" name="LineageOS/android_hardware_motorola" remote="github" revision="lineage-24.0" />
   <project path="external/bson" name="LineageOS/android_external_bson" remote="github" revision="lineage-22.2" />
 </manifest>
