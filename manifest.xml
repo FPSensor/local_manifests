@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  FPSensor local manifest: Moto X4 (payton) on LineageOS 24.0 with kernel 4.19.
+  moto-sdm660 local manifest: Moto X4 (payton) on LineageOS 24.0 with kernel 4.19.
 
   Usage:
     repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 (add git-lfs)
-    git clone -b lineage-24.0 https://github.com/FPSensor/local_manifests .repo/local_manifests
+    git clone -b lineage-24.0 https://github.com/moto-sdm660/local_manifests .repo/local_manifests
     repo sync
 
-  Modified projects are hosted at github.com/FPSensor (the comment above
+  Modified projects are hosted at github.com/moto-sdm660 (the comment above
   each one names its upstream); unmodified dependencies come from LineageOS.
 -->
 <manifest>
-  <remote name="fpsensor" fetch="https://github.com/FPSensor" />
+  <remote name="moto-sdm660" fetch="https://github.com/moto-sdm660" />
 
   <!--
     Latest AOSP clang (r614150, clang 23.0.1) for the kernel
@@ -30,23 +30,23 @@
 
   <!-- Device -->
   <!-- imported from LineageOS/android_device_motorola_payton -->
-  <project path="device/motorola/payton" name="android_device_motorola_payton" remote="fpsensor" revision="lineage-24.0" />
+  <project path="device/motorola/payton" name="android_device_motorola_payton" remote="moto-sdm660" revision="lineage-24.0" />
   <!-- imported from LineageOS/android_device_motorola_msm8998-common,
        renamed to sdm660-common -->
-  <project path="device/motorola/sdm660-common" name="android_device_motorola_sdm660-common" remote="fpsensor" revision="lineage-24.0" />
+  <project path="device/motorola/sdm660-common" name="android_device_motorola_sdm660-common" remote="moto-sdm660" revision="lineage-24.0" />
 
   <!-- Kernel: 4.19.325-cip, based on the official LineageOS sdm660 kernel
        (LineageOS/android_kernel_qcom_sdm660 @ lineage-20) with the payton/Moto
        bring-up on top. Built from vendor/sdm660-perf_defconfig plus
        vendor/ext_config/{moto-sdm660,payton}.config. -->
-  <project path="kernel/motorola/sdm660" name="android_kernel_motorola_sdm660" remote="fpsensor" revision="lineage-24.0" />
+  <project path="kernel/motorola/sdm660" name="android_kernel_motorola_sdm660" remote="moto-sdm660" revision="lineage-24.0" />
 
   <!-- Vendor blobs -->
   <!-- imported from TheMuppets/proprietary_vendor_motorola_payton -->
-  <project path="vendor/motorola/payton" name="proprietary_vendor_motorola_payton" remote="fpsensor" revision="lineage-24.0" />
+  <project path="vendor/motorola/payton" name="proprietary_vendor_motorola_payton" remote="moto-sdm660" revision="lineage-24.0" />
   <!-- imported from TheMuppets/proprietary_vendor_motorola_msm8998-common,
        renamed to sdm660-common -->
-  <project path="vendor/motorola/sdm660-common" name="proprietary_vendor_motorola_sdm660-common" remote="fpsensor" revision="lineage-24.0" />
+  <project path="vendor/motorola/sdm660-common" name="proprietary_vendor_motorola_sdm660-common" remote="moto-sdm660" revision="lineage-24.0" />
 
   <!-- sdm660-common dependencies (lineage.dependencies). Unmodified, so
        they come straight from LineageOS; listing them here keeps roomservice
