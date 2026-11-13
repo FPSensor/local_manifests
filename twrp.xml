@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  FPSensor local manifest: TWRP 12.1 for the Moto X4 (payton) on kernel 4.19.
+  moto-sdm660 local manifest: TWRP 12.1 for the Moto X4 (payton) on kernel 4.19.
 
   Usage:
     repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-    git clone -b twrp-12.1 https://github.com/FPSensor/local_manifests .repo/local_manifests
+    git clone -b twrp-12.1 https://github.com/moto-sdm660/local_manifests .repo/local_manifests
     repo sync
 -->
 <manifest>
-  <remote name="fpsensor" fetch="https://github.com/FPSensor" />
+  <remote name="moto-sdm660" fetch="https://github.com/moto-sdm660" />
 
   <!-- Device tree -->
-  <project path="device/motorola/payton" name="twrp_device_motorola_payton" remote="fpsensor" revision="twrp-12.1" />
+  <project path="device/motorola/payton" name="twrp_device_motorola_payton" remote="moto-sdm660" revision="twrp-12.1" />
 
   <!-- TeamWin vold plus the ro.twrp.fscrypt.legacy_keyring option: keeps
        the v1 FBE keys in the session keyring so they survive the /data
        remounts of recovery. -->
   <remove-project name="android_system_vold" />
-  <project path="system/vold" name="android_system_vold" remote="fpsensor" revision="android-12.1" />
+  <project path="system/vold" name="android_system_vold" remote="moto-sdm660" revision="android-12.1" />
 
   <!-- Flashable installer zip -->
   <project path="bootable/recovery/installer" name="osm0sis/twrp_abtemplate" remote="github" revision="master" />
