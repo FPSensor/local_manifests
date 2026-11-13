@@ -33,7 +33,7 @@
   <project path="device/motorola/payton" name="android_device_motorola_payton" remote="moto-sdm660" revision="lineage-24.0" />
   <!-- imported from LineageOS/android_device_motorola_msm8998-common,
        renamed to sdm660-common -->
-  <project path="device/motorola/sdm660-common" name="android_device_motorola_sdm660-common" remote="moto-sdm660" revision="17.0" />
+  <project path="device/motorola/sdm660-common" name="android_device_motorola_sdm660-common" remote="moto-sdm660" revision="lineage-24.0" />
 
   <!-- Kernel: 4.19.325-cip, based on the official LineageOS sdm660 kernel
        (LineageOS/android_kernel_qcom_sdm660 @ lineage-20) with the payton/Moto
