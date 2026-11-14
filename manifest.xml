@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   moto-sdm660 local manifest: Moto X4 (payton) on crDroid 17.0 with kernel 4.19.
-
-  Usage:
-    repo init -u https://github.com/crdroidandroid/android.git -b 17.0 --git-lfs
-    git clone -b 17.0 https://github.com/moto-sdm660/local_manifests .repo/local_manifests
-    repo sync
+  See README.md for how to use it.
 
   Modified projects are hosted at github.com/moto-sdm660 (the comment above
   each one names its upstream); unmodified dependencies come from LineageOS.
